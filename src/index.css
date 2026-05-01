@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-serif: "Cormorant Garamond", serif;
+
+  --color-brand-primary: #00FF00; /* Neon highlight */
+  --color-brand-bg: #0A0A0A;
+  --color-brand-surface: #141414;
+  --color-brand-border: #262626;
+  --color-royal-gold: #D4AF37;
+  --color-royal-dark: #1A120B;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-bg text-gray-100 font-sans antialiased;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #444;
+  }
+}
+
+.technical-grid {
+  background-image: 
+    linear-gradient(var(--color-brand-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-brand-border) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.glass-card {
+  @apply bg-brand-surface/80 backdrop-blur-md border border-brand-border transition-all duration-300;
+}
+
+.royal-gradient {
+  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #B8860B 100%);
+}
+
+.royal-text-gradient {
+  background: linear-gradient(to bottom, #FFF7AD 0%, #D4AF37 50%, #8A6E2F 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
